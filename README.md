@@ -85,17 +85,25 @@ Stock symbols and intervals can be configured through the UI in the Configuratio
 - Switch between multiple chart types
 - Real-time data fetching
 
+![Stock Price Chart 1](demo/stock_1.png)
+![Stock Price Chart 2](demo/stock_2.png)
+
 ### News Feed
 - Latest company news
 - Direct links to news sources
 - AI-powered news analysis
 - Automatic news updates
 
+![News Feed Interface](demo/news_1.png)
+
 ### AI Analysis
 - Stock trend prediction
 - News sentiment analysis
 - Technical analysis integration
 - Chinese language support for predictions
+
+![AI Analysis Interface 1](demo/ai_ana_1.png)
+![AI Analysis Interface 2](demo/ai_ana_2.png)
 
 ## Development
 
