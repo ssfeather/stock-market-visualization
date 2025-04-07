@@ -16,12 +16,12 @@ A React-based web application for visualizing stock market data and performing A
 ![Stock Price Chart](demo/stock_1.png)
 ![Stock Analysis](demo/stock_2.png)
 
+### News Analysis
+![News Analysis](demo/news_1.png)
+
 ### AI Analysis
 ![AI Analysis 1](demo/ai_ana_1.png)
 ![AI Analysis 2](demo/ai_ana_2.png)
-
-### News Analysis
-![News Analysis](demo/news_1.png)
 
 ## Setup
 
