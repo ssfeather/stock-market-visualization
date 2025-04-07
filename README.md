@@ -1,31 +1,29 @@
-# Stock Market Data Visualization
+# Stock Market Visualization
 
-A React-based web application for visualizing stock market data with real-time price charts, related news, and AI-powered analysis.
-
-![Stock Price Chart 2](demo/all4.png)
+A React-based web application for visualizing stock market data and performing AI-driven analysis.
 
 ## Features
 
-- Real-time stock price visualization
-- Multiple chart types (Line, Area + Volume, High-Low-Close)
-- Time interval selection (5min, Daily, Weekly, Monthly)
-- Company news integration with AI analysis
-- Stock trend prediction using AI
-- API key management through environment variables
-- Stock list configuration
+- Real-time stock data visualization
+- Historical price trends
+- AI-powered market analysis
+- News sentiment analysis
+- Interactive charts and graphs
 
-## Tech Stack
+## Screenshots
 
-- React
-- TypeScript
-- Material-UI
-- Recharts
-- Express (Backend)
-- Alpha Vantage API (Stock Data)
-- Tavily API (News Search)
-- OpenRouter API (AI Analysis)
+### Stock Price Visualization
+![Stock Price Chart](demo/stock_1.png)
+![Stock Analysis](demo/stock_2.png)
 
-## Getting Started
+### AI Analysis
+![AI Analysis 1](demo/ai_ana_1.png)
+![AI Analysis 2](demo/ai_ana_2.png)
+
+### News Analysis
+![News Analysis](demo/news_1.png)
+
+## Setup
 
 1. Clone the repository:
 ```bash
@@ -38,95 +36,46 @@ cd stock-market-visualization
 npm install
 ```
 
-3. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   ```bash
-   cp .env.example .env
-   ```
-   - Edit `.env` and add your API keys:
-   ```
-   REACT_APP_OPENROUTER_API_KEY=your_openrouter_api_key_here
-   REACT_APP_ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key_here
-   TAVILY_API_KEY=your_tavily_api_key_here
-   ```
-
-   You'll need to obtain API keys from:
-   - [Alpha Vantage](https://www.alphavantage.co/) for stock data
-   - [OpenRouter](https://openrouter.ai/) for AI analysis
-   - [Tavily](https://tavily.com/) for news search
+3. Create a `.env` file based on `.env.example` and fill in your API keys.
 
 4. Start the development server:
 ```bash
-# Start the backend server
-node server.js
-
-# In a new terminal, start the frontend
 npm start
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) to view the application.
+5. Start the backend server:
+```bash
+node server.js
+```
 
-## Configuration
+## Environment Variables
 
-### Environment Variables
+Create a `.env` file in the root directory with the following variables:
 
-The application uses the following environment variables:
+```env
+PORT=3000
+REACT_APP_API_URL=http://localhost:5000
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+NEWS_API_KEY=your_news_api_key
+```
 
-- `REACT_APP_ALPHA_VANTAGE_API_KEY`: Your Alpha Vantage API key for stock data
-- `REACT_APP_OPENROUTER_API_KEY`: Your OpenRouter API key for AI analysis
-- `TAVILY_API_KEY`: Your Tavily API key for news search
+## API Integration
 
-### Stock Configuration
+This project integrates with several APIs:
 
-Stock symbols and intervals can be configured through the UI in the Configuration Management tab or by editing `src/config/api.ts`.
+- Alpha Vantage API for stock data
+- OpenRouter API for AI analysis
+- News API for market news
 
-## Features
+## Contributing
 
-### Price Chart
-- View stock prices in different time intervals
-- Switch between multiple chart types
-- Real-time data fetching
-
-![Stock Price Chart 1](demo/stock_1.png)
-![Stock Price Chart 2](demo/stock_2.png)
-
-### News Feed
-- Latest company news
-- Direct links to news sources
-- AI-powered news analysis
-- Automatic news updates
-
-![News Feed Interface](demo/news_1.png)
-
-### AI Analysis
-- Stock trend prediction
-- News sentiment analysis
-- Technical analysis integration
-- Chinese language support for predictions
-
-![AI Analysis Interface 1](demo/ai_ana_1.png)
-![AI Analysis Interface 2](demo/ai_ana_2.png)
-
-## Development
-
-### Branch Strategy
-
-- `main`: Production-ready code
-- `feature/*`: Feature development branches
-- `bugfix/*`: Bug fix branches
-
-### Contributing
-
-1. Create a new feature branch
-2. Make your changes
-3. Submit a pull request
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/new-feature`
+3. Commit your changes: `git commit -am 'Add new feature'`
+4. Push to the branch: `git push origin feature/new-feature`
+5. Submit a pull request
 
 ## License
 
-MIT License
-
-## Security
-
-- API keys are managed through environment variables
-- Sensitive data is not committed to the repository
-- Example configuration is provided in `.env.example`
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
