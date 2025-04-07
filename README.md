@@ -2,7 +2,7 @@
 
 A React-based web application for visualizing stock market data with real-time price charts, related news, and AI-powered analysis.
 
-![Stock Price Chart 2](demo/stock_2.png)
+![Stock Price Chart 2](demo/all4.png)
 
 ## Features
 
