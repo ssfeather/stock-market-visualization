@@ -1,12 +1,6 @@
 export const API_CONFIG = {
   "ALPHA_VANTAGE": {
     "BASE_URL": "https://www.alphavantage.co/query",
-    "KEYS": [
-      {
-        "key": "SCTH8I9W4JR6LMXB",
-        "description": "Default Key"
-      }
-    ],
     "FUNCTIONS": {
       "INTRADAY": "TIME_SERIES_INTRADAY",
       "DAILY": "TIME_SERIES_DAILY",

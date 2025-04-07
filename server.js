@@ -18,64 +18,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// 保存配置文件的接口
-app.post('/api/saveConfig', async (req, res) => {
-  try {
-    const { content } = req.body;
-    if (!content) {
-      return res.status(400).json({ success: false, message: '配置内容不能为空' });
-    }
-
-    const configPath = path.join(__dirname, 'src', 'config', 'api.ts');
-    
-    // 验证配置文件格式
-    if (!content.includes('export const API_CONFIG')) {
-      return res.status(400).json({ 
-        success: false, 
-        message: '配置文件格式不正确，必须包含 export const API_CONFIG' 
-      });
-    }
-
-    // 备份原始文件
-    try {
-      const originalContent = await fs.readFile(configPath, 'utf8');
-      const backupPath = path.join(__dirname, 'src', 'config', `api.backup.${Date.now()}.ts`);
-      await fs.writeFile(backupPath, originalContent, 'utf8');
-      console.log('创建备份文件成功:', backupPath);
-    } catch (err) {
-      console.warn('无法创建备份文件:', err.message);
-    }
-
-    // 保存新配置
-    try {
-      await fs.writeFile(configPath, content, 'utf8');
-      console.log('配置文件保存成功:', configPath);
-      
-      // 验证文件是否成功写入
-      const savedContent = await fs.readFile(configPath, 'utf8');
-      if (savedContent !== content) {
-        throw new Error('文件内容验证失败');
-      }
-      
-      res.json({ success: true, message: '配置文件保存成功' });
-    } catch (writeError) {
-      console.error('写入配置文件失败:', writeError);
-      res.status(500).json({ 
-        success: false, 
-        message: '写入配置文件失败',
-        error: writeError.message 
-      });
-    }
-  } catch (error) {
-    console.error('保存配置文件失败:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: '保存配置文件失败',
-      error: error.message 
-    });
-  }
-});
-
 // Tavily API 路由
 app.post('/api/tavily', async (req, res) => {
   try {
