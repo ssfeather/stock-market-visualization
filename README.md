@@ -38,14 +38,14 @@ npm install
 
 3. Create a `.env` file based on `.env.example` and fill in your API keys.
 
-4. Start the development server:
-```bash
-npm start
-```
-
-5. Start the backend server:
+4. Start the backend server:
 ```bash
 node server.js
+```
+
+5. Start the development server:
+```bash
+npm start
 ```
 
 ## Environment Variables
@@ -53,12 +53,21 @@ node server.js
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-PORT=3000
-REACT_APP_API_URL=http://localhost:5000
-ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
-OPENROUTER_API_KEY=your_openrouter_api_key
-NEWS_API_KEY=your_news_api_key
+# Server Configuration
+PORT=3001                                    # Frontend development server port
+
+# API Keys
+REACT_APP_ALPHA_VANTAGE_API_KEY=your_key    # Stock data API key from Alpha Vantage
+REACT_APP_OPENROUTER_API_KEY=your_key       # AI analysis API key from OpenRouter
+TAVILY_API_KEY=your_key                     # News search API key from Tavily
 ```
+
+You can obtain the API keys from:
+- Alpha Vantage: https://www.alphavantage.co/support/#api-key
+- OpenRouter: https://openrouter.ai/keys
+- Tavily: https://tavily.com/
+
+Note: Replace `your_key` with your actual API keys. Never commit your API keys to version control.
 
 ## API Integration
 
